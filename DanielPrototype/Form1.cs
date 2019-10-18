@@ -24,7 +24,7 @@ namespace DanielPrototype
             do
             {
                 loadvalue.Width +=1;
-
+                loadvalue.Visible = true;
             } while (loadvalue.Width != fullload.Width);
             timer1.Stop();
             form2.Show();
@@ -52,6 +52,11 @@ namespace DanielPrototype
         }
 
         private void PictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Gradientpanel1_Paint(object sender, PaintEventArgs e)
         {
 
         }

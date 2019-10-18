@@ -62,22 +62,8 @@ namespace DanielPrototype
         private void Admin_Attendance_Click(object sender, EventArgs e)
         {
 
-            AdminEmp adminEmp = new AdminEmp();
-            AttendanceTbl attendanceTbl = new AttendanceTbl();
-
-
-
-
-            adminEmp.Visible = false;
-            attendanceTbl.Visible = true;
-            /* AdminEmp adminEmp = new AdminEmp();
-             adminEmp.Hide();
-             AttendanceTbl attendanceTbl = new AttendanceTbl();
-             attendanceTbl.Show();
-            // Admin_Emp.Visible = false;
-             Admin_Attendance.Visible = true;
-             Admin_notif.Visible = false;
-             Admin_worksched.Visible = false; */
+            attendanceTbl1.Visible = true;
+            adminEmp2.Visible = false;
 
 
 
@@ -124,16 +110,9 @@ namespace DanielPrototype
 
         private void Admin_Emp_Click(object sender, EventArgs e)
         {
-            AdminEmp adminEmp = new AdminEmp();
-            AttendanceTbl attendanceTbl = new AttendanceTbl();
-             
 
-
-           
-            adminEmp.Visible = true;
-            attendanceTbl.Visible = false;
-            //Admin_notif.Visible = false;
-            //Admin_worksched.Visible = false;
+            adminEmp2.Visible = true;
+            attendanceTbl1.Visible = false;
             Admin_Emp.ForeColor = Color.FromArgb(111, 104, 102);
             Admin_Attendance.ForeColor = Color.FromArgb(255, 255, 255);
             Admin_notif.ForeColor = Color.FromArgb(255, 255, 255);

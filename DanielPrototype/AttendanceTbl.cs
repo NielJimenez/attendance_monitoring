@@ -96,15 +96,7 @@ namespace DanielPrototype
 
         private void InsertIcon_Click(object sender, EventArgs e)
         {
-            Conn.Open();
-            SqlCommand Comm1 = new SqlCommand("sp_Emprate", Conn);
-            Comm1.Parameters.AddWithValue("@Emprate", Convert.ToInt32(Rateinput.Text));
-            Comm1.Parameters.AddWithValue("@EmpID", empId);
-            Comm1.CommandType = CommandType.StoredProcedure;
-            Comm1.ExecuteNonQuery();
-
-            Conn.Close();
-            EmpRefresh();
+           
         }
 
         private void DataRepeater1_ItemTemplate_MouseDoubleClick(object sender, MouseEventArgs e)
@@ -118,7 +110,7 @@ namespace DanielPrototype
                 Comm2.Parameters.AddWithValue("@p_EmpID", empId);
                 Comm2.CommandType = CommandType.StoredProcedure;
                 SqlDataReader DR = Comm2.ExecuteReader();
-
+                
                 if (DR.Read())
                 {
                     Rateinput.Text = Convert.ToString(DR["Emp_Rate"]);
@@ -127,13 +119,32 @@ namespace DanielPrototype
             }
             catch
             {
-
+                
             }
         }
 
         private void Label_salary_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void Rateinput_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void PictureBox1_Click(object sender, EventArgs e)
+        {
+            Conn.Open();
+            SqlCommand Comm1 = new SqlCommand("sp_Emprate", Conn);
+            Comm1.Parameters.AddWithValue("@Emprate", Convert.ToInt32(Rateinput.Text));
+            Comm1.Parameters.AddWithValue("@EmpID", empId);
+            Comm1.CommandType = CommandType.StoredProcedure;
+            Comm1.ExecuteNonQuery();
+
+            Conn.Close();
+            EmpRefresh();
+            MessageBox.Show("Current Rate Change Sucessfully");
         }
     }
 }

@@ -47,6 +47,7 @@ namespace DanielPrototype
             label1Address.DataBindings.Clear();
             label1username.DataBindings.Clear();
             label1userpass.DataBindings.Clear();
+            label_ERate.DataBindings.Clear();
 
             label1ID.DataBindings.Add("Text", dt, "Emp_ID");
             labelFname.DataBindings.Add("Text", dt, "FirstName");
@@ -56,6 +57,7 @@ namespace DanielPrototype
             label1Address.DataBindings.Add("Text", dt, "Emp_Address");
             label1username.DataBindings.Add("Text", dt, "username");
             label1userpass.DataBindings.Add("Text", dt, "userpass");
+            label_ERate.DataBindings.Add("Text", dt, "Emp_Rate");
             dataRepeater1.DataSource = dt;
             Conn.Close();
 
@@ -130,6 +132,7 @@ namespace DanielPrototype
             Comm1.Parameters.AddWithValue("@username", Uname_label.Text);
             Comm1.Parameters.AddWithValue("@userpass", Upass_label.Text);
             Comm1.Parameters.AddWithValue("@Birthdate", datepick_txt.Text );
+            Comm1.Parameters.AddWithValue("@EmpRate", label_ERate.Text);
             Comm1.CommandType = CommandType.StoredProcedure;
             Comm1.ExecuteNonQuery();
 
@@ -141,6 +144,7 @@ namespace DanielPrototype
             datepick_txt.Text = "";
             Uname_label.Text = "";
             Upass_label.Text = "";
+            label_ERate.Text = "";
             Conn.Close();
             EmpRefresh();
         }

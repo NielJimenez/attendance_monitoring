@@ -21,6 +21,7 @@ namespace DanielPrototype
             InitializeComponent();
             EmpID = Form2.EmpID;
             EmpRate = Form2.Emprate;
+            
         }
 
         private void RealTime_Click(object sender, EventArgs e)
@@ -30,7 +31,7 @@ namespace DanielPrototype
 
         private void Attendance_Load(object sender, EventArgs e)
         {
-            
+            Emprefresh();
         }
 
         private void Timer1_Tick(object sender, EventArgs e)
@@ -85,9 +86,12 @@ namespace DanielPrototype
             if (DR.Read())
             {
                 TimeID = Convert.ToInt32(DR[0]);
+                bttn_timeout.Enabled = true;
+                btn_timein.Enabled = false;
             }
             Conn.Close();
             MessageBox.Show("Time In Sucessfully");
+            Emprefresh();
             //Comm1.Parameters.AddWithValue("@FirstName", Fname_label.Text);
         }
 
@@ -102,6 +106,9 @@ namespace DanielPrototype
             Comm2.ExecuteNonQuery();
             Conn.Close();
             MessageBox.Show("Time Out   Sucessfully");
+            bttn_timeout.Enabled = false;
+            btn_timein.Enabled = true;
+            Emprefresh();   
         }
 
         private void Gradientpanel1_Paint(object sender, PaintEventArgs e)
@@ -118,5 +125,59 @@ namespace DanielPrototype
         {
 
         }
+
+        private void DataRepeater1_CurrentItemIndexChanged_1(object sender, EventArgs e)
+        {
+
+
+        }
+        private void Emprefresh()
+        {
+
+
+
+           
+            Conn.Open();
+            SqlDataAdapter Comm1 = new SqlDataAdapter("sp_atttendview", Conn);
+            //SqlCommand Comm1 = new SqlCommand("sp_atttendview", Conn);
+            //Comm1.CommandType = System.Data.CommandType.StoredProcedure;
+            Comm1.SelectCommand.Parameters.AddWithValue("@EmpID", EmpID);
+            Comm1.SelectCommand.CommandType = CommandType.StoredProcedure;
+            //Comm1.Parameters.AddWithValue("@EmpID", EmpID);
+            
+       
+           // SqlDataReader R = Comm1.ExecuteReader();
+
+
+
+            DataTable R = new DataTable();
+            Comm1.Fill(R);
+           // R.Read();
+
+                label_EmpID.DataBindings.Clear();
+                label_Timein.DataBindings.Clear();
+                label_Timeout.DataBindings.Clear();
+
+                label_EmpID.DataBindings.Add("Text", R, "Emp_ID");
+                label_Timein.DataBindings.Add("Text", R, "Time_in");
+                label_Timeout.DataBindings.Add("Text", R, "Time_out");
+
+                dataRepeater1.DataSource = R;
+
+
+            Conn.Close();
+
+        }
+
+        private void Panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void Panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
+
 }

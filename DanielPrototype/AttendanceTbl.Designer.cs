@@ -30,14 +30,12 @@
         {
             this.panel2 = new System.Windows.Forms.Panel();
             this.Admin_Emp = new System.Windows.Forms.Label();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.Rate = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.search_box = new System.Windows.Forms.TextBox();
             this.dataRepeater1 = new Microsoft.VisualBasic.PowerPacks.DataRepeater();
             this.label_EmpId = new System.Windows.Forms.Label();
             this.label_salary = new System.Windows.Forms.Label();
@@ -47,18 +45,19 @@
             this.label_Timein = new System.Windows.Forms.Label();
             this.label_Timeout = new System.Windows.Forms.Label();
             this.label_ID = new System.Windows.Forms.Label();
-            this.RefreshIcon = new System.Windows.Forms.PictureBox();
-            this.InsertIcon = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.Rateinput = new System.Windows.Forms.TextBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.InsertIcon = new System.Windows.Forms.PictureBox();
+            this.RefreshIcon = new System.Windows.Forms.PictureBox();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.dataRepeater1.ItemTemplate.SuspendLayout();
             this.dataRepeater1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.RefreshIcon)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.InsertIcon)).BeginInit();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.InsertIcon)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.RefreshIcon)).BeginInit();
             this.SuspendLayout();
             // 
             // panel2
@@ -81,17 +80,6 @@
             this.Admin_Emp.Size = new System.Drawing.Size(171, 23);
             this.Admin_Emp.TabIndex = 16;
             this.Admin_Emp.Text = "Attendance Details";
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Image = global::DanielPrototype.Properties.Resources.magnifying_glass__1_;
-            this.pictureBox3.Location = new System.Drawing.Point(1033, 4);
-            this.pictureBox3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(63, 32);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox3.TabIndex = 24;
-            this.pictureBox3.TabStop = false;
             // 
             // label4
             // 
@@ -159,17 +147,9 @@
             this.label10.TabIndex = 33;
             this.label10.Text = "Salary";
             // 
-            // search_box
-            // 
-            this.search_box.Location = new System.Drawing.Point(1092, 10);
-            this.search_box.Margin = new System.Windows.Forms.Padding(4);
-            this.search_box.Name = "search_box";
-            this.search_box.Size = new System.Drawing.Size(340, 22);
-            this.search_box.TabIndex = 18;
-            // 
             // dataRepeater1
             // 
-            this.dataRepeater1.BackColor = System.Drawing.Color.White;
+            this.dataRepeater1.BackColor = System.Drawing.SystemColors.Control;
             // 
             // dataRepeater1.ItemTemplate
             // 
@@ -184,11 +164,11 @@
             this.dataRepeater1.ItemTemplate.Margin = new System.Windows.Forms.Padding(4);
             this.dataRepeater1.ItemTemplate.Size = new System.Drawing.Size(1387, 48);
             this.dataRepeater1.ItemTemplate.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.DataRepeater1_ItemTemplate_MouseDoubleClick);
-            this.dataRepeater1.Location = new System.Drawing.Point(21, 87);
+            this.dataRepeater1.Location = new System.Drawing.Point(7, 87);
             this.dataRepeater1.Margin = new System.Windows.Forms.Padding(4);
             this.dataRepeater1.Name = "dataRepeater1";
             this.dataRepeater1.Padding = new System.Windows.Forms.Padding(4);
-            this.dataRepeater1.Size = new System.Drawing.Size(1397, 484);
+            this.dataRepeater1.Size = new System.Drawing.Size(1397, 492);
             this.dataRepeater1.TabIndex = 8;
             this.dataRepeater1.Text = "dataRepeater1";
             this.dataRepeater1.CurrentItemIndexChanged += new System.EventHandler(this.DataRepeater1_CurrentItemIndexChanged);
@@ -196,17 +176,18 @@
             // label_EmpId
             // 
             this.label_EmpId.AutoSize = true;
-            this.label_EmpId.Location = new System.Drawing.Point(112, 16);
+            this.label_EmpId.Location = new System.Drawing.Point(262, 15);
             this.label_EmpId.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label_EmpId.Name = "label_EmpId";
             this.label_EmpId.Size = new System.Drawing.Size(47, 17);
             this.label_EmpId.TabIndex = 9;
             this.label_EmpId.Text = "EmpId";
+            this.label_EmpId.Visible = false;
             // 
             // label_salary
             // 
             this.label_salary.AutoSize = true;
-            this.label_salary.Location = new System.Drawing.Point(1048, 15);
+            this.label_salary.Location = new System.Drawing.Point(795, 15);
             this.label_salary.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label_salary.Name = "label_salary";
             this.label_salary.Size = new System.Drawing.Size(48, 17);
@@ -217,7 +198,7 @@
             // Label_Ename
             // 
             this.Label_Ename.AutoSize = true;
-            this.Label_Ename.Location = new System.Drawing.Point(21, 16);
+            this.Label_Ename.Location = new System.Drawing.Point(9, 15);
             this.Label_Ename.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Label_Ename.Name = "Label_Ename";
             this.Label_Ename.Size = new System.Drawing.Size(73, 17);
@@ -227,7 +208,7 @@
             // label_rate
             // 
             this.label_rate.AutoSize = true;
-            this.label_rate.Location = new System.Drawing.Point(868, 17);
+            this.label_rate.Location = new System.Drawing.Point(669, 15);
             this.label_rate.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label_rate.Name = "label_rate";
             this.label_rate.Size = new System.Drawing.Size(38, 17);
@@ -238,7 +219,7 @@
             // label_Thours
             // 
             this.label_Thours.AutoSize = true;
-            this.label_Thours.Location = new System.Drawing.Point(615, 17);
+            this.label_Thours.Location = new System.Drawing.Point(482, 15);
             this.label_Thours.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label_Thours.Name = "label_Thours";
             this.label_Thours.Size = new System.Drawing.Size(82, 17);
@@ -249,7 +230,7 @@
             // label_Timein
             // 
             this.label_Timein.AutoSize = true;
-            this.label_Timein.Location = new System.Drawing.Point(195, 16);
+            this.label_Timein.Location = new System.Drawing.Point(150, 15);
             this.label_Timein.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label_Timein.Name = "label_Timein";
             this.label_Timein.Size = new System.Drawing.Size(50, 17);
@@ -259,7 +240,7 @@
             // label_Timeout
             // 
             this.label_Timeout.AutoSize = true;
-            this.label_Timeout.Location = new System.Drawing.Point(383, 16);
+            this.label_Timeout.Location = new System.Drawing.Point(286, 15);
             this.label_Timeout.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label_Timeout.Name = "label_Timeout";
             this.label_Timeout.Size = new System.Drawing.Size(59, 17);
@@ -278,6 +259,75 @@
             this.label_ID.Text = "ID";
             this.label_ID.Visible = false;
             // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(78)))), ((int)(((byte)(69)))));
+            this.panel1.Controls.Add(this.pictureBox1);
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.Rateinput);
+            this.panel1.Controls.Add(this.InsertIcon);
+            this.panel1.Controls.Add(this.RefreshIcon);
+            this.panel1.Controls.Add(this.dataRepeater1);
+            this.panel1.Controls.Add(this.label10);
+            this.panel1.Controls.Add(this.Rate);
+            this.panel1.Controls.Add(this.label8);
+            this.panel1.Controls.Add(this.label7);
+            this.panel1.Controls.Add(this.label6);
+            this.panel1.Controls.Add(this.label4);
+            this.panel1.Location = new System.Drawing.Point(4, 41);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1437, 583);
+            this.panel1.TabIndex = 3;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.Panel1_Paint);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(1118, 14);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(123, 23);
+            this.label1.TabIndex = 44;
+            this.label1.Text = "Current Rate";
+            // 
+            // Rateinput
+            // 
+            this.Rateinput.BackColor = System.Drawing.SystemColors.Window;
+            this.Rateinput.Location = new System.Drawing.Point(1238, 14);
+            this.Rateinput.Margin = new System.Windows.Forms.Padding(4);
+            this.Rateinput.Name = "Rateinput";
+            this.Rateinput.Size = new System.Drawing.Size(161, 22);
+            this.Rateinput.TabIndex = 43;
+            this.Rateinput.TextChanged += new System.EventHandler(this.Rateinput_TextChanged);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::DanielPrototype.Properties.Resources.add_button;
+            this.pictureBox1.Location = new System.Drawing.Point(1073, 5);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(52, 32);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 45;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Visible = false;
+            this.pictureBox1.Click += new System.EventHandler(this.PictureBox1_Click);
+            // 
+            // InsertIcon
+            // 
+            this.InsertIcon.Image = global::DanielPrototype.Properties.Resources.add_user_button;
+            this.InsertIcon.Location = new System.Drawing.Point(858, 5);
+            this.InsertIcon.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.InsertIcon.Name = "InsertIcon";
+            this.InsertIcon.Size = new System.Drawing.Size(53, 33);
+            this.InsertIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.InsertIcon.TabIndex = 41;
+            this.InsertIcon.TabStop = false;
+            this.InsertIcon.Visible = false;
+            this.InsertIcon.Click += new System.EventHandler(this.InsertIcon_Click);
+            // 
             // RefreshIcon
             // 
             this.RefreshIcon.Image = global::DanielPrototype.Properties.Resources.refresh_button;
@@ -291,60 +341,6 @@
             this.RefreshIcon.Visible = false;
             this.RefreshIcon.Click += new System.EventHandler(this.RefreshIcon_Click);
             // 
-            // InsertIcon
-            // 
-            this.InsertIcon.Image = global::DanielPrototype.Properties.Resources.add_user_button;
-            this.InsertIcon.Location = new System.Drawing.Point(975, 4);
-            this.InsertIcon.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.InsertIcon.Name = "InsertIcon";
-            this.InsertIcon.Size = new System.Drawing.Size(53, 33);
-            this.InsertIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.InsertIcon.TabIndex = 41;
-            this.InsertIcon.TabStop = false;
-            this.InsertIcon.Click += new System.EventHandler(this.InsertIcon_Click);
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(78)))), ((int)(((byte)(69)))));
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.Rateinput);
-            this.panel1.Controls.Add(this.InsertIcon);
-            this.panel1.Controls.Add(this.RefreshIcon);
-            this.panel1.Controls.Add(this.dataRepeater1);
-            this.panel1.Controls.Add(this.search_box);
-            this.panel1.Controls.Add(this.label10);
-            this.panel1.Controls.Add(this.Rate);
-            this.panel1.Controls.Add(this.label8);
-            this.panel1.Controls.Add(this.label7);
-            this.panel1.Controls.Add(this.label6);
-            this.panel1.Controls.Add(this.label4);
-            this.panel1.Controls.Add(this.pictureBox3);
-            this.panel1.Location = new System.Drawing.Point(4, 41);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1437, 583);
-            this.panel1.TabIndex = 3;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.Panel1_Paint);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(49, 14);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(123, 23);
-            this.label1.TabIndex = 44;
-            this.label1.Text = "Current Rate";
-            // 
-            // Rateinput
-            // 
-            this.Rateinput.Location = new System.Drawing.Point(176, 14);
-            this.Rateinput.Margin = new System.Windows.Forms.Padding(4);
-            this.Rateinput.Name = "Rateinput";
-            this.Rateinput.Size = new System.Drawing.Size(132, 22);
-            this.Rateinput.TabIndex = 43;
-            // 
             // AttendanceTbl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -357,14 +353,14 @@
             this.Load += new System.EventHandler(this.AttendanceTbl_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.dataRepeater1.ItemTemplate.ResumeLayout(false);
             this.dataRepeater1.ItemTemplate.PerformLayout();
             this.dataRepeater1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.RefreshIcon)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.InsertIcon)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.InsertIcon)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.RefreshIcon)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -373,14 +369,12 @@
 
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label Admin_Emp;
-        private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label Rate;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox search_box;
         private Microsoft.VisualBasic.PowerPacks.DataRepeater dataRepeater1;
         private System.Windows.Forms.Label label_salary;
         private System.Windows.Forms.Label Label_Ename;
@@ -395,5 +389,6 @@
         private System.Windows.Forms.TextBox Rateinput;
         private System.Windows.Forms.Label label_ID;
         private System.Windows.Forms.Label label_EmpId;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

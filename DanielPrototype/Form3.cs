@@ -164,6 +164,11 @@ namespace DanielPrototype
             Profilebutton.ForeColor = Color.FromArgb(255, 255, 255);
             DashboardButton.ForeColor = Color.FromArgb(255, 255, 255);
         }
+
+        private void Attendance1_Load_2(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 
